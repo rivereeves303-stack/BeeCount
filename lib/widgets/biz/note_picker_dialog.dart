@@ -42,7 +42,7 @@ class _NotePickerDialogState extends ConsumerState<NotePickerDialog> {
       final notes = await NoteHistoryService.getHistoryNotes(
         repository: repo,
         ledgerId: widget.ledgerId,
-        scope: ref.read(noteHistoryScopeProvider),
+        scope: NoteHistoryScope.currentCategory,
         sort: ref.read(noteHistorySortProvider),
         categoryId: widget.categoryId,
         categorySyncId: widget.categorySyncId,
